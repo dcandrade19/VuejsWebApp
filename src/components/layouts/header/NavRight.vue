@@ -49,7 +49,7 @@ export default {
   methods: {
     deslogar () {
       this.showModal = false
-      setUsuario({ deslogar: true }).then((result) => {
+      setUsuario({ deslogar: true }).then(result => {
         if (!this.$store.state.usuario.logado) {
           this.$router.push('/login')
         }
@@ -74,16 +74,17 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: table;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active em versões anteriores a 2.1.8 */ {
   opacity: 0;

@@ -116,12 +116,20 @@
 </template>
 
 <script>
-import { required, maxLength, minLength, helpers } from 'vuelidate/lib/validators'
+import {
+  required,
+  maxLength,
+  minLength,
+  helpers
+} from 'vuelidate/lib/validators'
 
 import axios from 'axios'
 
-// eslint-disable-next-line
-const cpfValido = helpers.regex('cpfValido', /^[0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}$/)
+const cpfValido = helpers.regex(
+  'cpfValido',
+  // eslint-disable-next-line
+  /^[0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}$/
+)
 
 export default {
   name: 'crud-main',
@@ -158,12 +166,14 @@ export default {
             const id = funcionario.id
             funcionario.createdAt = null
             funcionario.updatedAt = null
-            res = await axios.put('http://localhost:3000/funcionarios/' + id,
+            res = await axios.put(
+              'http://localhost:3000/funcionarios/' + id,
               funcionario,
               { headers: { 'x-access-token': token } }
             )
           } else {
-            res = await axios.post('http://localhost:3000/funcionarios',
+            res = await axios.post(
+              'http://localhost:3000/funcionarios',
               funcionario,
               { headers: { 'x-access-token': token } }
             )
@@ -188,7 +198,8 @@ export default {
         const token = this.$store.state.usuario.token
         const funcionario = this.funcionario
         const id = funcionario.id
-        const res = await axios.delete('http://localhost:3000/funcionarios/' + id,
+        const res = await axios.delete(
+          'http://localhost:3000/funcionarios/' + id,
           { headers: { 'x-access-token': token } }
         )
         if (res.data) {
@@ -215,9 +226,9 @@ export default {
     async getFuncionarios () {
       try {
         const token = this.$store.state.usuario.token
-        const res = await axios.get('http://localhost:3000/funcionarios',
-          { headers: { 'x-access-token': token } }
-        )
+        const res = await axios.get('http://localhost:3000/funcionarios', {
+          headers: { 'x-access-token': token }
+        })
         this.funcionarios = res.data
         window.console.log(res.data)
       } catch (error) {
@@ -226,17 +237,19 @@ export default {
       }
     },
     seleciona (funcionario) {
-      this.funcionario = {...funcionario}
+      this.funcionario = { ...funcionario }
       this.selecionado = this.funcionario.id
       window.console.log(this.funcionario.id)
     }
   },
   computed: {
     isValid () {
-      return !this.$v.funcionario.nome.$invalid &&
-      !this.$v.funcionario.cpf.$invalid &&
-      !this.$v.funcionario.setor.$invalid &&
-      !this.$v.funcionario.datacontratacao.$invalid
+      return (
+        !this.$v.funcionario.nome.$invalid &&
+        !this.$v.funcionario.cpf.$invalid &&
+        !this.$v.funcionario.setor.$invalid &&
+        !this.$v.funcionario.datacontratacao.$invalid
+      )
     },
     getSelecionado () {
       return this.selecionado
@@ -277,16 +290,17 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: table;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active em versões anteriores a 2.1.8 */ {
   opacity: 0;
