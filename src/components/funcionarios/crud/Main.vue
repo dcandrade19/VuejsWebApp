@@ -215,7 +215,7 @@ export default {
     async getFuncionarios () {
       try {
         const token = this.$store.state.usuario.token
-        const res = await axios.get('https://node-str-teste.herokuapp.com/funcionarios',
+        const res = await axios.get('http://localhost:3000/funcionarios',
           { headers: { 'x-access-token': token } }
         )
         this.funcionarios = res.data
