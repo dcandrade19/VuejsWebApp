@@ -51,15 +51,15 @@
       <transition name="fade">
       <div v-if="erro" class="alert alert-dismissible alert-danger">
   <button @click="erro = false" type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Erro!</strong> Não foi possivel realizar a operação!.
+  <strong>Erro!</strong> Não foi possivel realizar a operação!
 </div>
       <div v-if="deletado" class="alert alert-dismissible alert-success">
   <button @click="deletado = false" type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>OK!</strong> O funcionário foi deletado com sucesso!.
+  <strong>OK!</strong> O funcionário foi deletado com sucesso!
 </div>
 <div v-if="adicionado" class="alert alert-dismissible alert-success">
   <button @click="adicionado = false" type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>OK!</strong> O funcionário foi salvo com sucesso!.
+  <strong>OK!</strong> O funcionário foi salvo com sucesso!
 </div>
       </transition>
       <div class="table-responsive">
