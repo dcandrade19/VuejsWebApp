@@ -73,7 +73,7 @@
       <th scope="col">Data da Contratação</th>
     </tr>
   </thead>
-  <tbody v-for="funcionario in funcionarios" :key="funcionario.id" v-on:mouseover="seleciona(funcionario)">
+  <tbody v-for="funcionario in funcionarios" :key="funcionario.id" v-on:click="seleciona(funcionario)">
     <tr class='clickable-row'  v-bind:class="[funcionario.id == getSelecionado ? 'table-active' : '']">
       <th>{{ funcionario.id }}</th>
       <td>{{ funcionario.nome }}</td>
