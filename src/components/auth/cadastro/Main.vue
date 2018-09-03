@@ -8,6 +8,7 @@
 </div>
       </transition>
   <form class="form" @submit.prevent="submit" action="#" method="post">
+    <h3>Crie sua conta</h3>
     <div class="row">
       <div class="form-group col-md-6">
       <label for="nome">Nome</label>
