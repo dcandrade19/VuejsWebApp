@@ -11,13 +11,13 @@
       <label for="exampleDropdownFormEmail1">Login</label>
       <input v-model="auth.login" v-bind:class="[$v.auth.login.$invalid ? 'is-invalid' : 'is-valid']" type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Login">
       <div class="valid-feedback">OK!</div>
-      <div class="invalid-feedback">Imforme o login!</div>
+      <div class="invalid-feedback">Informe o login!</div>
     </div>
     <div class="form-group">
       <label for="exampleDropdownFormPassword1">Senha</label>
       <input v-model="auth.senha" v-bind:class="[$v.auth.senha.$invalid ? 'is-invalid' : 'is-valid']" type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha">
       <div class="valid-feedback">OK!</div>
-      <div class="invalid-feedback">Imforme a senha!</div>
+      <div class="invalid-feedback">Informe a senha!</div>
     </div>
     <div class="form-check">
       <input v-model="auth.lembreme" type="checkbox" class="form-check-input" id="dropdownCheck">
