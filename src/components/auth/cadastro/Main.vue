@@ -14,7 +14,7 @@
       <label for="nome">Nome</label>
       <input v-model="auth.nome" v-bind:class="[$v.auth.nome.$invalid ? 'is-invalid' : 'is-valid']" type="text" class="form-control" id="nome" placeholder="Nome">
       <div class="valid-feedback">OK!</div>
-      <div class="invalid-feedback">Imforme o nome!</div>
+      <div class="invalid-feedback">Informe o nome!</div>
     </div>
     <div class="form-group col-md-6">
       <label for="login">Login</label>
